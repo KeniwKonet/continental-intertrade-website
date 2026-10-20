@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Continental Intertrade</title>
+<meta name="theme-color" content="#17140F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Continental Intertrade Ltd">
+<meta property="og:description" content="Building Maritime Capacity. Connecting Communities. Transforming Lives.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<meta name="description" content="Continental Intertrade Ltd: boat manufacturing, marine engineering and maintenance, maritime training and coastal community development in Nigeria, starting in Bayelsa State.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* Layout concept: a working waterfront company site. Cream "paper" pages, charcoal and green bands for weight,
+   real photography full-bleed, the green/orange/red/charcoal stripe band from the brand used as the one recurring motif.
+   Single deliberate light look (brand cream ground), every colour set explicitly. */
+:root{
+  --green:#445E22; --leaf:#7FA344; --orange:#EE8A2A; --red:#C0392B; --coral:#E8604C;
+  --blue:#0754BE; --ink:#17140F; --ink-2:#221D16; --cream:#F6EFE2; --paper:#FBF7EF;
+  --sand:#E9DFCC; --line:#DCD0BA; --muted:#5E554A; --muted-2:#8A7F6E; --on-dark:#D9CFBF; --white:#FFFDF8;
+  --display:'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  --body:'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  --max:1200px; --gut:max(16px, env(safe-area-inset-left, 0px)); --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  --stripe:repeating-linear-gradient(90deg,var(--green) 0 48px,var(--orange) 48px 96px,var(--red) 96px 144px,var(--ink) 144px 156px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-0.01em}
+p{margin:0}
+ul{margin:0;padding:0}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.band{padding-block:clamp(56px,8vw,104px)}
+.band.tight{padding-block:clamp(40px,5vw,64px)}
+.dark{background:var(--ink);color:var(--cream)}
+.green{background:var(--green);color:var(--cream)}
+.paper{background:var(--paper)}
+.stripe{height:10px;background:var(--stripe)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.dark .eyebrow,.green .eyebrow{color:var(--orange)}
+.green .eyebrow{color:#F2B477}
+.h1{font-size:clamp(38px,6.4vw,76px);font-weight:800;line-height:1.02}
+.h2{font-size:clamp(30px,4.2vw,50px);font-weight:800;line-height:1.06}
+.h3{font-size:clamp(21px,2.2vw,26px);font-weight:800;line-height:1.2}
+.lead{font-size:clamp(18px,1.8vw,21px);line-height:1.55;color:var(--muted);max-width:62ch}
+.dark .lead{color:var(--on-dark)} .green .lead{color:#E7EEDC}
+.prose{display:flex;flex-direction:column;gap:18px;max-width:66ch;color:#2B2620}
+.dark .prose{color:var(--on-dark)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.head{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 15px/1 var(--body);padding:15px 22px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--orange);color:var(--ink)}
+.btn-primary:hover{background:#F39A42}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn .arr{transition:transform .15s ease}.btn:hover .arr{transform:translateX(3px)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand svg{width:46px;height:41px}
+.wm{display:flex;flex-direction:column;gap:4px;width:150px}
+.wm b{font:800 20px/1 var(--display);letter-spacing:.02em}
+.wm .bars{display:flex;gap:3px}.wm .bars i{flex:1;height:2px;border-radius:1px}
+.wm small{font:600 7.4px/1 var(--body);letter-spacing:.98em;white-space:nowrap}
+.wm small em{font-style:normal;color:var(--red)}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{font-size:14.5px;font-weight:600;text-decoration:none;padding:9px 12px;border-radius:8px;color:#3A332A}
+.menu a:hover{background:var(--sand)}
+.menu a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--orange);border-radius:0}
+.menu .btn{margin-left:8px;padding:12px 18px;font-size:14px}
+.burger{display:none;background:none;border:0;padding:10px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:24px;height:2px;background:currentColor;margin:5px 0;transition:.2s}
+@media (max-width:1060px){
+  .burger{display:block}
+  .menu{position:absolute;left:0;right:0;top:76px;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--gut-r) 18px var(--gut);display:none}
+  .menu.open{display:flex}
+  .menu a{padding:14px 6px;border-bottom:1px solid var(--line);border-radius:0}
+  .menu a[aria-current="page"]{box-shadow:inset 4px 0 0 var(--orange);padding-left:14px}
+  .menu .btn{margin:14px 0 0;justify-content:center;border-bottom:0}
+}
+
+/* Pages */
+[data-page]{animation:fade .35s ease both}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:var(--cream);overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,20,15,.92) 0%,rgba(23,20,15,.72) 42%,rgba(23,20,15,.15) 78%),linear-gradient(0deg,rgba(23,20,15,.7),rgba(23,20,15,0) 40%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(72px,11vw,150px) clamp(40px,6vw,70px);display:flex;flex-direction:column;gap:28px}
+.hero h1{max-width:13ch}
+.hero h1 .g{color:#9BBF5E}.hero h1 .o{color:var(--orange)}.hero h1 .r{color:var(--coral)}
+.hero .lead{color:#E4DBCB;max-width:52ch}
+.hero .eyebrow,.phero .eyebrow{color:var(--orange)}
+@media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(23,20,15,.78) 0%,rgba(23,20,15,.86) 55%,rgba(23,20,15,.94) 100%)}.hero-img{object-position:70% 30%}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;padding-top:22px;border-top:1px solid rgba(246,239,226,.22);font-size:14px;color:#CFC5B3}
+.hero-meta b{color:var(--cream);font-weight:700}
+.coord{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+
+/* Page hero (inner pages) */
+.phero{position:relative;background:var(--ink);color:var(--cream)}
+.phero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,56px);align-items:end;padding-block:clamp(48px,7vw,88px)}
+.phero .crumb{font-size:13px;color:var(--muted-2);letter-spacing:.06em}
+.phero .crumb a{color:var(--on-dark);text-decoration:none}
+.phero figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;max-width:100%}
+.phero figure img{width:100%;height:100%;object-fit:cover}
+.phero .letter{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--orange);color:var(--ink);font:800 18px/1 var(--display)}
+@media (max-width:820px){.phero .wrap{grid-template-columns:1fr}}
+
+/* Fact strip */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:18px;background:var(--white);overflow:hidden}
+.fact{padding:26px 28px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--line);min-width:0}
+.fact:last-child{border-right:0}
+.fact dt{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+.fact dd{margin:0;font-weight:600;font-size:17px;line-height:1.45}
+@media (max-width:820px){.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}}
+
+/* Core areas */
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.area{position:relative;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
+.area:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(23,20,15,.12)}
+.area img{aspect-ratio:16/8;object-fit:cover;width:100%}
+.area .body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:10px}
+.area .tag{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+.area .tag i{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;font:800 13px/1 var(--display);font-style:normal;color:var(--cream)}
+.area p{color:var(--muted);font-size:16px}
+.area .more{margin-top:6px;font-weight:700;font-size:15px;color:var(--red)}
+@media (max-width:760px){.areas{grid-template-columns:1fr}}
+
+/* Split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.split.top{align-items:start}
+.split > *{min-width:0}
+.photo{border-radius:20px;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(23,20,15,.84);color:var(--cream);font-size:12.5px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border-radius:999px}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+
+/* Vision quote */
+.quote{font-family:var(--display);font-size:clamp(24px,3.2vw,38px);font-weight:700;line-height:1.25;max-width:30ch}
+.quote em{font-style:normal;color:var(--orange)}
+
+/* Lists */
+.ticks{list-style:none;display:grid;gap:12px}
+.ticks li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;line-height:1.5}
+.ticks li::before{content:"";width:14px;height:14px;margin-top:5px;border-radius:50%;border:3px solid var(--leaf)}
+.ticks.two{grid-template-columns:1fr 1fr;column-gap:36px}
+@media (max-width:760px){.ticks.two{grid-template-columns:1fr}}
+.dark .ticks li::before,.green .ticks li::before{border-color:var(--orange)}
+
+/* Cards grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid3,.grid4{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h3{font-size:19px;font-weight:800;line-height:1.25}
+.card p{font-size:15.5px;color:var(--muted);line-height:1.55}
+.card .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--cream)}
+.card .ico svg{width:24px;height:24px}
+.dark .card{background:var(--ink-2);border-color:#3A332A}.dark .card p{color:var(--on-dark)}.dark .card .ico{background:#2E271E}
+
+/* Vessel list */
+.vessels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.vessel{padding:26px 22px 26px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px;min-width:0}
+.vessel:not(:nth-child(3n)){border-right:1px solid var(--line);margin-right:22px}
+.vessel b{font:800 20px/1.25 var(--display)}
+.vessel span{color:var(--muted);font-size:15.5px}
+.vessel small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+@media (max-width:860px){.vessels{grid-template-columns:1fr 1fr}.vessel:not(:nth-child(3n)){border-right:0;margin-right:0}.vessel:nth-child(odd){border-right:1px solid var(--line);margin-right:22px}}
+@media (max-width:560px){.vessels{grid-template-columns:1fr}.vessel:nth-child(odd){border-right:0;margin-right:0}}
+
+/* Phases timeline */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:ph;position:relative}
+.phase{position:relative;padding:34px 22px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.phase::before{content:"";position:absolute;left:0;right:0;top:9px;height:3px;background:#3A332A}
+.phase::after{content:"";position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;background:var(--ink);border:4px solid var(--c)}
+.phase small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.phase h3{font-size:20px;font-weight:800;color:var(--cream)}
+.phase p{font-size:15px;color:var(--on-dark);line-height:1.55}
+.phase.now::after{background:var(--c)}
+@media (max-width:900px){.phases{grid-template-columns:1fr 1fr;row-gap:34px}}
+@media (max-width:560px){.phases{grid-template-columns:1fr}.phase{padding:0 0 0 40px}.phase::before{left:9px;right:auto;top:0;bottom:-34px;width:3px;height:auto}.phase:last-child::before{display:none}}
+
+/* Values */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
+.value{padding:22px 18px 24px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-width:0}
+.value b{font:800 18px/1.2 var(--display)}
+.value span{font-size:15px;color:var(--muted)}
+@media (max-width:900px){.values{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.values{grid-template-columns:1fr}}
+
+/* Belief band */
+.belief{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.6vw,72px);line-height:1.02}
+.belief .g{color:#9BBF5E}.belief .o{color:var(--orange)}.belief .r{color:var(--coral)}
+
+/* CTA band */
+.cta{display:grid;grid-template-columns:1.3fr auto;gap:28px;align-items:center}
+@media (max-width:760px){.cta{grid-template-columns:1fr}}
+
+/* Contact */
+.locs{display:grid;gap:14px}
+.loc{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px}
+.loc .pin{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:var(--cream)}
+.loc .pin svg{width:22px;height:22px}
+.loc small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+.loc p{font-weight:600;line-height:1.45}
+.direct{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.direct{grid-template-columns:1fr}}
+.direct > div{background:var(--ink);color:var(--cream);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.direct small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.direct .val{font:800 20px/1.3 var(--display);overflow-wrap:anywhere;user-select:all}
+.copy{align-self:flex-start;background:transparent;border:1px solid #4A4237;color:var(--on-dark);font:600 13px/1 var(--body);padding:8px 12px;border-radius:999px;cursor:pointer}
+.copy:hover{border-color:var(--orange);color:var(--cream)}
+form.f{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f .full{grid-column:1 / -1}
+.f label{display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:700}
+.f input,.f select,.f textarea{font:500 16px/1.4 var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(68,94,34,.18)}
+.f textarea{min-height:130px;resize:vertical}
+.f .err{color:var(--red);font-size:13px;font-weight:600;min-height:0}
+.f [aria-invalid="true"]{border-color:var(--red)}
+.f .note{font-size:13.5px;color:var(--muted)}
+.done{grid-column:1 / -1;background:#EEF3E4;border:1px solid #C9D8AE;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.done b{font-family:var(--display)}
+@media (max-width:620px){form.f{grid-template-columns:1fr}}
+
+/* Footer */
+.site-footer{background:var(--ink);color:var(--on-dark)}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:36px;padding-block:64px 40px}
+.foot > *{min-width:0}
+.foot h4{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.foot a{text-decoration:none;color:var(--on-dark)}.foot a:hover{color:var(--cream)}
+.foot ul{list-style:none;display:grid;gap:9px;font-size:15px}
+.foot .addr{display:grid;gap:14px;font-size:14.5px;line-height:1.5}
+.foot .addr b{color:var(--cream);display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.foot .brand .wm b,.foot .brand .wm small{color:var(--cream)}
+.legal{border-top:1px solid #3A332A;padding-block:22px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:13.5px;color:var(--muted-2)}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot{grid-template-columns:1fr}}
+
+.swirl{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:min(440px,50%);opacity:.16;pointer-events:none}
+.rel{position:relative;overflow:hidden}
+.rel > .wrap{position:relative;z-index:1}
+.num{font-variant-numeric:tabular-nums}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--sand);color:var(--ink);font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+</style>
+</head>
+<body>
+<!-- Shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark-dark" viewBox="0 0 200 180"><circle cx="56" cy="44" r="15" fill="#EE8A2A"/><path d="M104 18 L104 84 L150 84 Z" fill="#17140F" stroke="#17140F" stroke-width="8" stroke-linejoin="round"/><path d="M94 38 L94 84 L70 84 Z" fill="#445E22" stroke="#445E22" stroke-width="8" stroke-linejoin="round"/><g fill="none" stroke-linecap="round" stroke-width="14"><path d="M22 108 H142 Q166 108 178 88" stroke="#445E22"/><path d="M38 132 H136 Q158 132 168 114" stroke="#EE8A2A"/><path d="M56 156 H128 Q148 156 156 140" stroke="#C0392B"/></g></symbol>
+    <symbol id="mark-rev" viewBox="0 0 200 180"><circle cx="56" cy="44" r="15" fill="#EE8A2A"/><path d="M104 18 L104 84 L150 84 Z" fill="#F6EFE2" stroke="#F6EFE2" stroke-width="8" stroke-linejoin="round"/><path d="M94 38 L94 84 L70 84 Z" fill="#7FA344" stroke="#7FA344" stroke-width="8" stroke-linejoin="round"/><g fill="none" stroke-linecap="round" stroke-width="14"><path d="M22 108 H142 Q166 108 178 88" stroke="#7FA344"/><path d="M38 132 H136 Q158 132 168 114" stroke="#EE8A2A"/><path d="M56 156 H128 Q148 156 156 140" stroke="#E8604C"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-anchor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V21M7 11h10M4 14a8 7 0 0 0 16 0"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.6 8.2-8 9-4.4-.8-8-4-8-9V6z M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0 4.9 5L21 12l-8.5 8.5a2.1 2.1 0 0 1-3-3L18 9l-1.5-1.6a4 4 0 0 0-5-4.9l2.6 2.6-1.4 2.8-2.8 1.4L7.3 6.7a4 4 0 0 0 4.9 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2c2.6.2 4.5 2.3 4.5 5.3"/></g></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 9c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M3 13l4-4 4 2 4-4 6 6M7 9l5 5a2 2 0 0 0 3-3M11 11l3 3M4 14l5 5h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#home" data-link aria-label="Continental Intertrade Ltd, home">
+      <svg aria-hidden="true"><use href="#mark-dark"/></svg>
+      <span class="wm"><b>CONTINENTAL</b><span class="bars"><i style="background:var(--green)"></i><i style="background:var(--orange)"></i><i style="background:var(--red)"></i></span><small>INTERTRADE <em>LTD</em></small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#home" data-link>Home</a>
+      <a href="#about" data-link>About</a>
+      <a href="#boats" data-link>Boats</a>
+      <a href="#maintenance" data-link>Maintenance</a>
+      <a href="#training" data-link>Training</a>
+      <a href="#communities" data-link>Communities</a>
+      <a href="#partner" data-link>Partner with us</a>
+      <a class="btn btn-primary" href="#contact" data-link>Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<section data-page="home" aria-label="Home">
+  <div class="hero">
+    <img class="hero-img" src="assets/img/hero.jpg" alt="Continental Boatyard in Yenagoa: a blue and white waterfront hangar with its signboard, boats moored at the jetty">
+    <div class="wrap">
+      <p class="eyebrow">Boat manufacturing · Marine engineering · Maritime training</p>
+      <h1 class="h1"><span class="g">Building Maritime Capacity.</span> <span class="o">Connecting Communities.</span> <span class="r">Transforming Lives.</span></h1>
+      <p class="lead">Continental Intertrade Ltd is a Nigerian maritime company building boats, keeping vessels working and training young people for careers on Africa's waterways, starting in Bayelsa State.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#boats" data-link>Explore our boats <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#partner" data-link>Partner with us</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>Continental Boatyard</b> · The Marine Base, Ovom, Yenagoa</span>
+        <span class="coord">4.92° N · 6.27° E</span>
+        <span>Head office · Gwarimpa, Abuja</span>
+      </div>
+    </div>
+  </div>
+  <div class="stripe"></div>
+
+  <div class="band">
+    <div class="wrap stack" style="gap:40px">
+      <dl class="facts" style="margin:0">
+        <div class="fact"><dt>Country of incorporation</dt><dd>Federal Republic of Nigeria</dd></div>
+        <div class="fact"><dt>Area of operation</dt><dd>Nigeria, with strategic expansion across Africa</dd></div>
+        <div class="fact"><dt>Core business</dt><dd>Boat Manufacturing, Marine Engineering and Maintenance, Maritime Training, and Coastal Community Development</dd></div>
+      </dl>
+      <div class="split top">
+        <div class="head" style="margin:0">
+          <p class="eyebrow">About the company</p>
+          <h2 class="h2">Where local maritime needs meet modern marine technology</h2>
+        </div>
+        <div class="prose">
+          <p>Continental Intertrade Ltd is a Nigerian company established with a vision to transform the maritime sector through innovative boat manufacturing, reliable marine maintenance services, and practical maritime training for young people.</p>
+          <p>Through locally relevant boat manufacturing, professional maintenance services, and skills development, we seek to make water transportation safer, more accessible, more efficient, and more affordable.</p>
+          <a class="btn btn-dark" href="#about" data-link style="align-self:flex-start">Read our story <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band paper">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Our core business areas</p>
+        <h2 class="h2">Four ways we serve Africa's waterways</h2>
+      </div>
+      <div class="areas">
+        <a class="area" href="#boats" data-link>
+          <img src="assets/img/factory.jpg" alt="New fibreglass speedboat hulls on cradles inside the Continental Intertrade boat factory">
+          <div class="body"><span class="tag"><i style="background:var(--green)">A</i>Boat Manufacturing and Assembly</span><h3 class="h3">Vessels built for Nigeria's waterways</h3><p>Passenger, commercial, fishing, utility, special-purpose and custom-built boats suited to local conditions.</p><span class="more">See vessel types →</span></div>
+        </a>
+        <a class="area" href="#maintenance" data-link>
+          <img src="assets/img/engine.jpg" alt="A marine engineer servicing twin outboard engines on a modern speedboat">
+          <div class="body"><span class="tag"><i style="background:var(--blue)">B</i>Maintenance, Repair and Marine Engineering</span><h3 class="h3">Keeping vessels safe and working</h3><p>Preventive maintenance, engine and hull work, refurbishment and maintenance planning for operators.</p><span class="more">See our services →</span></div>
+        </a>
+        <a class="area" href="#training" data-link>
+          <img src="assets/img/crew.jpg" alt="Two young crew members in green Continental Intertrade polos and caps in a modern boat hangar">
+          <div class="body"><span class="tag"><i style="background:var(--orange);color:var(--ink)">C</i>Maritime Training and Youth Empowerment</span><h3 class="h3">Skills for maritime careers</h3><p>Practical training in boatbuilding, engines, safety and marine operations, starting in Bayelsa State.</p><span class="more">See training areas →</span></div>
+        </a>
+        <a class="area" href="#communities" data-link>
+          <img src="assets/img/jetty.jpg" alt="Passengers in life jackets boarding a Continental Intertrade passenger boat at a modern jetty">
+          <div class="body"><span class="tag"><i style="background:var(--red)">D</i>Riverine and Coastal Communities</span><h3 class="h3">Water transport that connects lives</h3><p>Reliable boats and services that link communities to schools, clinics, markets and jobs.</p><span class="more">See our community work →</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="band dark rel">
+    <img class="swirl" src="assets/img/africa.png" alt="">
+    <div class="wrap split">
+      <div class="stack">
+        <p class="eyebrow">Our vision</p>
+        <p class="quote">To become a leading African maritime solutions company, recognised for excellence in boat manufacturing, marine engineering, maritime training, and sustainable development of <em>riverine and coastal communities.</em></p>
+      </div>
+      <div class="stack">
+        <p class="eyebrow">Our mission</p>
+        <p class="lead">To design, manufacture, maintain, and support reliable marine vessels while developing the skills and capabilities of young people in the maritime sector.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap split">
+      <figure class="photo" style="margin:0;aspect-ratio:4/3"><img src="assets/img/boatyard.jpg" alt="The real Continental Boatyard building in Yenagoa with its blue door and signboard"><figcaption>Continental Boatyard · Yenagoa</figcaption></figure>
+      <div class="stack">
+        <p class="eyebrow">Our commitment to Bayelsa State</p>
+        <h2 class="h2">A strategic starting point on the Niger Delta</h2>
+        <p class="lead">Bayelsa's extensive network of rivers, creeks, and coastal settlements creates significant opportunities for boat manufacturing, marine maintenance, maritime skills development, and improved water transportation.</p>
+        <a class="btn btn-dark" href="#communities" data-link style="align-self:flex-start">Our Bayelsa priorities <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="band dark">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Our African expansion strategy</p>
+        <h2 class="h2">From Nigeria to the rest of Africa, in four phases</h2>
+      </div>
+      <div class="phases">
+        <div class="phase now" style="--c:var(--leaf)"><small>Phase One</small><h3>Foundation in Nigeria</h3><p>Core manufacturing, maintenance and training capabilities.</p></div>
+        <div class="phase" style="--c:var(--orange)"><small>Phase Two</small><h3>National Expansion</h3><p>Other Nigerian states with inland-waterway and coastal needs.</p></div>
+        <div class="phase" style="--c:var(--coral)"><small>Phase Three</small><h3>Regional Partnerships</h3><p>Partnerships and opportunities in West African markets.</p></div>
+        <div class="phase" style="--c:#6FA3F0"><small>Phase Four</small><h3>Pan-African Development</h3><p>Strategic expansion into suitable markets across Africa.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band green">
+    <div class="wrap cta">
+      <div class="stack" style="gap:14px">
+        <p class="eyebrow">Strategic partnerships and investment</p>
+        <h2 class="h2">Build Africa's maritime future with us</h2>
+        <p class="lead">We welcome government institutions, investors, development organisations, private-sector businesses, and community stakeholders interested in practical and sustainable maritime solutions.</p>
+      </div>
+      <div class="btns"><a class="btn btn-primary" href="#partner" data-link>Partnership opportunities <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section data-page="about" aria-label="About" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / About</p>
+        <p class="eyebrow">About the company</p>
+        <h1 class="h1" style="font-size:clamp(36px,5.4vw,64px)">A Nigerian maritime company with an African horizon</h1>
+        <p class="lead">Boat manufacturing, marine maintenance and maritime training, committed to the development of riverine communities and coastal cities.</p>
+      </div>
+      <figure><img src="assets/img/sign.jpg" alt="The Continental Intertrade signboard outside a modern boat manufacturing facility"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+
+  <div class="band">
+    <div class="wrap split top">
+      <div class="head" style="margin:0"><p class="eyebrow">Who we are</p><h2 class="h2">Bridging local maritime needs and modern marine technology</h2></div>
+      <div class="prose">
+        <p>Continental Intertrade Ltd is a Nigerian company established with a vision to transform the maritime sector through innovative boat manufacturing, reliable marine maintenance services, and practical maritime training for young people. With a strong commitment to the development of riverine communities and coastal cities, the company seeks to provide sustainable solutions that improve transportation, create employment opportunities, strengthen local economies, and enhance the quality of life of people living in water-dependent communities.</p>
+        <p>Headquartered in Nigeria, Continental Intertrade Ltd is strategically positioned to serve the unique maritime needs of the Niger Delta, beginning with Bayelsa State, while pursuing a long-term ambition to expand its operations and impact across Africa.</p>
+        <p>Recognising the importance of waterways to commerce, mobility, fishing, tourism, emergency response, and community life, the company aims to bridge the gap between local maritime needs and modern marine technology. Through locally relevant boat manufacturing, professional maintenance services, and skills development, Continental Intertrade Ltd seeks to make water transportation safer, more accessible, more efficient, and more affordable.</p>
+        <p>Beyond its commercial objectives, the company is committed to social impact. It believes that the future of the maritime industry depends on empowering young people with practical skills, supporting local industries, and creating opportunities for communities whose livelihoods are closely connected to rivers, creeks, lagoons, and coastal waters.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band dark rel">
+    <img class="swirl" src="assets/img/africa.png" alt="">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Our vision</p>
+        <p class="quote">To become a leading African maritime solutions company, recognised for excellence in boat manufacturing, marine engineering, maritime training, and sustainable development of <em>riverine and coastal communities.</em></p>
+        <p class="lead">We envision an Africa where waterways serve as engines of economic growth, young people have access to meaningful maritime careers, and every riverine and coastal community can benefit from safe, reliable, and affordable marine transportation.</p>
+      </div>
+      <div class="stack">
+        <p class="eyebrow">Our mission</p>
+        <p class="quote" style="font-size:clamp(22px,2.6vw,30px)">To design, manufacture, maintain, and support reliable marine vessels while developing the skills and capabilities of young people in the maritime sector.</p>
+        <p class="lead">We are committed to delivering innovative, durable, and cost-effective maritime solutions that address the practical needs of riverine communities and coastal cities, create employment, stimulate local enterprise, and contribute to sustainable economic development across Nigeria and Africa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Our value proposition</p><h2 class="h2">Commercial expertise, technical capability, community engagement</h2><p class="lead">Continental Intertrade Ltd seeks to distinguish itself through the combination of commercial expertise, technical capability, community engagement, and human-capital development.</p></div>
+      <div class="grid3">
+        <div class="card"><span class="ico" style="color:var(--green)"><svg><use href="#i-wave"/></svg></span><h3>Locally Relevant Solutions</h3><p>We aim to provide boats and marine services designed around the realities of African waterways and the needs of local operators.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-tool"/></svg></span><h3>Quality and Reliability</h3><p>We seek to promote dependable workmanship, appropriate materials, sound engineering practices, and professional maintenance standards.</p></div>
+        <div class="card"><span class="ico" style="color:var(--orange)"><svg><use href="#i-people"/></svg></span><h3>Skills and Employment</h3><p>We aim to create opportunities for young people to develop practical skills and participate in the maritime economy.</p></div>
+        <div class="card"><span class="ico" style="color:var(--red)"><svg><use href="#i-anchor"/></svg></span><h3>Community-Centred Development</h3><p>We believe maritime businesses should contribute to the wellbeing and economic advancement of the communities they serve.</p></div>
+        <div class="card"><span class="ico" style="color:var(--green)"><svg><use href="#i-shield"/></svg></span><h3>Safety and Responsibility</h3><p>We are committed to encouraging safe vessel operations, appropriate training, compliance with applicable regulations, and responsible environmental practices.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-hand"/></svg></span><h3>Long-Term Partnerships</h3><p>We seek mutually beneficial relationships with government institutions, investors, development partners, vessel operators, educational institutions, and local communities.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band paper">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Corporate values</p><h2 class="h2">Our business philosophy is guided by the following core values</h2></div>
+      <div class="values">
+        <div class="value"><b>Integrity</b><span>Conducting business honestly, transparently, and responsibly.</span></div>
+        <div class="value"><b>Innovation</b><span>Embracing practical technologies and improved ways of solving maritime challenges.</span></div>
+        <div class="value"><b>Excellence</b><span>Pursuing quality, reliability, and continuous improvement in every area of operation.</span></div>
+        <div class="value"><b>Safety</b><span>Prioritising the protection of human life and the wellbeing of our workforce and customers.</span></div>
+        <div class="value"><b>Empowerment</b><span>Supporting young people through practical skills, opportunity, and enterprise development.</span></div>
+        <div class="value"><b>Community Impact</b><span>Seeking to improve the quality of life of people in riverine and coastal communities.</span></div>
+        <div class="value"><b>Sustainability</b><span>Promoting responsible business practices and long-term economic and environmental value.</span></div>
+        <div class="value"><b>Partnership</b><span>Building productive relationships that advance shared development objectives.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Safety, quality and environmental responsibility</p>
+        <h2 class="h2">Responsibility to passengers, workers, communities and the environment</h2>
+        <p class="lead">Continental Intertrade Ltd recognises that maritime operations involve responsibilities to passengers, vessel operators, workers, communities, and the environment. The company intends to integrate safety and responsible operating practices into its manufacturing, maintenance, and training activities.</p>
+      </div>
+      <div class="stack">
+        <p style="font-weight:700">Our commitments include:</p>
+        <ul class="ticks">
+          <li>Promoting vessel designs and construction practices appropriate to intended operating conditions.</li>
+          <li>Encouraging compliance with applicable maritime, environmental, and occupational safety requirements.</li>
+          <li>Supporting the proper use of life-saving equipment and emergency procedures.</li>
+          <li>Promoting appropriate inspection, maintenance, and documentation practices.</li>
+          <li>Encouraging responsible waste management and pollution prevention.</li>
+          <li>Seeking relevant approvals, technical partnerships, and professional standards as our operations develop.</li>
+        </ul>
+        <p style="color:var(--muted)">We believe that safe, durable, and responsibly maintained vessels are fundamental to public confidence and sustainable maritime growth.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band dark">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Our long-term aspiration</p>
+        <h2 class="h2">More than a boat manufacturing and maintenance company</h2>
+      </div>
+      <div class="prose">
+        <p>Continental Intertrade Ltd aspires to become more than a boat manufacturing and maintenance company. We aim to become a trusted maritime development partner that connects people, supports livelihoods, develops technical talent, and unlocks the economic potential of Africa's waterways.</p>
+        <p>From Bayelsa State to other parts of Nigeria and ultimately across Africa, our ambition is to contribute to a future in which locally developed maritime solutions improve mobility, create jobs, strengthen communities, and expand economic opportunity.</p>
+        <p>We believe that when waterways become safer and more accessible, when young people gain valuable technical skills, and when local communities participate in the industries that serve them, maritime development can become a powerful instrument for inclusive growth.</p>
+        <p>Continental Intertrade Ltd is committed to pursuing this vision through responsible business practices, strategic partnerships, technical development, and a sustained focus on the needs of the people and communities we serve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOATS ================= -->
+<section data-page="boats" aria-label="Boat manufacturing" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Boats</p>
+        <span class="letter">A</span>
+        <h1 class="h1" style="font-size:clamp(36px,5.4vw,64px)">Boat Manufacturing and Assembly</h1>
+        <p class="lead">Continental Intertrade Ltd seeks to establish a strong presence in boat manufacturing and assembly, producing vessels suited to the geographical, commercial, and environmental conditions of Nigeria's waterways and the wider African maritime market.</p>
+        <div class="btns"><a class="btn btn-primary" href="#contact" data-link>Request a vessel <span class="arr">→</span></a></div>
+      </div>
+      <figure><img src="assets/img/boat.jpg" alt="A Continental Intertrade passenger boat in brand livery cruising through a mangrove creek"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Our proposed manufacturing focus</p><h2 class="h2">Six vessel types for working waterways</h2></div>
+      <div class="vessels">
+        <div class="vessel"><small>Transport</small><b>Passenger boats</b><span>For riverine and coastal transportation.</span></div>
+        <div class="vessel"><small>Trade</small><b>Commercial boats</b><span>For local businesses and inter-community transport.</span></div>
+        <div class="vessel"><small>Livelihoods</small><b>Fishing boats</b><span>To support artisanal and commercial fishing activities.</span></div>
+        <div class="vessel"><small>Industry</small><b>Utility and workboats</b><span>For industrial, construction, and marine operations.</span></div>
+        <div class="vessel"><small>Public service</small><b>Special-purpose boats</b><span>For approved public-service, emergency-response, and community-support applications.</span></div>
+        <div class="vessel"><small>Bespoke</small><b>Custom-built vessels</b><span>Designed to meet specific client requirements.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="band paper">
+    <div class="wrap split">
+      <figure class="photo" style="margin:0;aspect-ratio:16/10"><img src="assets/img/factory.jpg" alt="New fibreglass speedboat hulls on cradles inside the Continental Intertrade boat factory"><figcaption>Local production, modern standards</figcaption></figure>
+      <div class="stack">
+        <p class="eyebrow">Building local capacity</p>
+        <h2 class="h2" style="font-size:clamp(26px,3.2vw,38px)">Quality workmanship, made in Nigeria</h2>
+        <p class="lead">The company intends to promote local production, responsible material sourcing, quality workmanship, and appropriate marine engineering standards.</p>
+        <p style="color:var(--muted)">By developing local manufacturing capacity, Continental Intertrade Ltd aims to reduce dependence on imported vessels where locally manufactured alternatives are suitable, support Nigerian industries, and create opportunities for skilled and unskilled workers.</p>
+      </div>
+    </div>
+  </div>
+  <div class="band dark"><div class="wrap cta"><div class="stack" style="gap:12px"><p class="eyebrow">Need a vessel?</p><h2 class="h2" style="font-size:clamp(26px,3.4vw,40px)">Tell us where it will operate and what it will carry</h2></div><div class="btns"><a class="btn btn-primary" href="#contact" data-link>Talk to our team <span class="arr">→</span></a></div></div></div>
+</section>
+
+<!-- ================= MAINTENANCE ================= -->
+<section data-page="maintenance" aria-label="Maintenance and marine engineering" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Maintenance</p>
+        <span class="letter" style="background:var(--blue);color:var(--cream)">B</span>
+        <h1 class="h1" style="font-size:clamp(34px,5vw,60px)">Boat Maintenance, Repair and Marine Engineering</h1>
+        <p class="lead">The performance and safety of marine vessels depend on regular inspection, proper maintenance, and timely repairs. Continental Intertrade Ltd aims to provide dependable maintenance and repair services that help vessel owners and operators protect their investments and maintain operational efficiency.</p>
+        <div class="btns"><a class="btn btn-primary" href="#contact" data-link>Book a service <span class="arr">→</span></a></div>
+      </div>
+      <figure><img src="assets/img/engine.jpg" alt="A marine engineer servicing twin outboard engines on a modern speedboat"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Our planned services</p><h2 class="h2">From routine servicing to full refurbishment</h2></div>
+      <div class="grid4">
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-tool"/></svg></span><h3>Routine servicing</h3><p>Routine boat servicing and preventive maintenance.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-tool"/></svg></span><h3>Engines</h3><p>Engine inspection, servicing, and repair.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-wave"/></svg></span><h3>Hulls</h3><p>Hull inspection, repair, and refurbishment.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-tool"/></svg></span><h3>Mechanical and electrical</h3><p>Mechanical and electrical maintenance.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-shield"/></svg></span><h3>Components</h3><p>Replacement of worn or damaged components.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-anchor"/></svg></span><h3>Assessment and planning</h3><p>Technical assessment and maintenance planning.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-wave"/></svg></span><h3>Refurbishment</h3><p>Refurbishment of existing boats to improve reliability and service life.</p></div>
+        <div class="card"><span class="ico" style="color:var(--blue)"><svg><use href="#i-people"/></svg></span><h3>Operator support</h3><p>Maintenance support for commercial operators, fishing businesses, community transport services, and other maritime clients.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="band dark">
+    <div class="wrap split">
+      <div class="stack"><p class="eyebrow">The outcome</p><h2 class="h2" style="font-size:clamp(26px,3.4vw,40px)">A stronger maintenance culture on the water</h2></div>
+      <p class="lead">Through these services, the company seeks to reduce avoidable equipment failures, minimise downtime, improve operational reliability, and promote a stronger maintenance culture within the maritime industry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAINING ================= -->
+<section data-page="training" aria-label="Maritime training" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Training</p>
+        <span class="letter">C</span>
+        <h1 class="h1" style="font-size:clamp(34px,5vw,60px)">Maritime Training and Youth Empowerment</h1>
+        <p class="lead">Continental Intertrade Ltd recognises that young people are essential to the future of the maritime industry. The company therefore places youth empowerment and practical skills development at the heart of its long-term social impact strategy, beginning in Bayelsa State.</p>
+        <div class="btns"><a class="btn btn-primary" href="#contact" data-link>Register interest <span class="arr">→</span></a></div>
+      </div>
+      <figure><img src="assets/img/crew.jpg" alt="Two young crew members in green Continental Intertrade polos and caps in a modern boat hangar"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Potential training areas</p>
+        <h2 class="h2">Market-relevant technical and vocational skills</h2>
+        <p class="lead">Our proposed training initiatives will focus on equipping young people with market-relevant technical and vocational skills that can support employment, entrepreneurship, and career development in the maritime sector.</p>
+      </div>
+      <ul class="ticks">
+        <li>Boatbuilding and fabrication.</li>
+        <li>Marine engine servicing and maintenance.</li>
+        <li>Basic marine mechanical and electrical systems.</li>
+        <li>Vessel inspection and maintenance procedures.</li>
+        <li>Maritime safety and emergency preparedness.</li>
+        <li>Safe boat handling and seamanship, through appropriately approved training arrangements.</li>
+        <li>Marine operations and logistics.</li>
+        <li>Entrepreneurship and small-business development in the maritime industry.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band paper">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">How we will train</p><h2 class="h2">Practical programmes, delivered with accredited partners</h2></div>
+      <div class="grid4">
+        <div class="card"><h3>Classroom instruction</h3><p>Theory and safety foundations taught in structured sessions.</p></div>
+        <div class="card"><h3>Workshop experience</h3><p>Time on real hulls, engines and systems in the workshop.</p></div>
+        <div class="card"><h3>Supervised hands-on learning</h3><p>Practical tasks under the eye of experienced technicians.</p></div>
+        <div class="card"><h3>Industry exposure</h3><p>Contact with operators, employers and the wider maritime economy.</p></div>
+      </div>
+      <div class="prose" style="margin-top:32px">
+        <p>Where required, training and certification will be delivered in collaboration with appropriately accredited institutions and relevant maritime authorities.</p>
+        <p>Our long-term objective is to help young people in Bayelsa State and other riverine communities acquire practical skills that can lead to employment, self-employment, business ownership, and participation in Nigeria's growing maritime economy.</p>
+      </div>
+    </div>
+  </div>
+  <div class="band green"><div class="wrap cta"><div class="stack" style="gap:12px"><p class="eyebrow">Young and ready to learn?</p><h2 class="h2" style="font-size:clamp(26px,3.4vw,40px)">Register your interest for upcoming programmes</h2></div><div class="btns"><a class="btn btn-primary" href="#contact" data-link>Register interest <span class="arr">→</span></a></div></div></div>
+</section>
+
+<!-- ================= COMMUNITIES ================= -->
+<section data-page="communities" aria-label="Communities" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Communities</p>
+        <span class="letter" style="background:var(--red);color:var(--cream)">D</span>
+        <h1 class="h1" style="font-size:clamp(34px,5vw,60px)">Maritime Solutions for Riverine and Coastal Communities</h1>
+        <p class="lead">In many riverine areas, water transportation is not simply an alternative means of movement; it is an essential connection to education, healthcare, markets, employment, and public services.</p>
+      </div>
+      <figure><img src="assets/img/jetty.jpg" alt="Passengers in life jackets boarding a Continental Intertrade passenger boat at a modern jetty"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Our community-oriented priorities</p>
+        <h2 class="h2">Boats, maintenance and partnerships that serve communities</h2>
+        <p class="lead">The company seeks to support these communities by developing and supplying suitable vessels, maintaining existing boats, and working with public and private stakeholders to improve marine transportation infrastructure and services.</p>
+      </div>
+      <div class="stack">
+        <ul class="ticks">
+          <li>Improving access to reliable boats for local transportation.</li>
+          <li>Supporting access to markets and essential services.</li>
+          <li>Enabling fishing communities to transport people, equipment, and produce.</li>
+          <li>Supporting the movement of goods between riverine settlements and urban centres.</li>
+          <li>Promoting safer and more dependable water transportation.</li>
+          <li>Creating local employment through manufacturing, maintenance, and maritime training.</li>
+          <li>Exploring partnerships that improve access to affordable marine transportation.</li>
+        </ul>
+        <p style="color:var(--muted)">By responding to the practical needs of riverine communities and coastal cities, Continental Intertrade Ltd aims to make maritime development a direct contributor to improved living standards.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band dark" id="bayelsa">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Our commitment to Bayelsa State</p>
+        <h2 class="h2">Bayelsa as a centre for maritime skills and boat manufacturing</h2>
+        <p class="lead">Continental Intertrade Ltd intends to contribute to the development of Bayelsa State by promoting local maritime enterprise and building opportunities for young people.</p>
+        <figure class="photo" style="margin:8px 0 0;aspect-ratio:4/3"><img src="assets/img/boatyard.jpg" alt="The Continental Boatyard building in Yenagoa, Bayelsa State"><figcaption>The Marine Base, Ovom, Yenagoa</figcaption></figure>
+      </div>
+      <div class="stack">
+        <p style="font-weight:700;color:var(--cream)">Our proposed priorities include:</p>
+        <ul class="ticks" style="color:var(--on-dark)">
+          <li>Establishing and developing boat manufacturing and maintenance capabilities.</li>
+          <li>Creating pathways for young people to acquire practical maritime and technical skills.</li>
+          <li>Exploring apprenticeship and vocational development programmes.</li>
+          <li>Supporting local employment and small-business participation in the marine value chain.</li>
+          <li>Collaborating with government agencies, educational institutions, community leaders, and private-sector partners.</li>
+          <li>Encouraging local participation in boatbuilding, marine engineering, logistics, and related services.</li>
+          <li>Promoting a culture of safety, environmental responsibility, and professional standards.</li>
+        </ul>
+        <p class="lead" style="font-size:17px">Our ambition is to help position Bayelsa State as an important centre for maritime skills, marine engineering, and boat manufacturing in Nigeria, with the potential to serve other parts of the country and the wider African market.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Social and economic impact</p><h2 class="h2">Maritime enterprise as a platform for business growth and social transformation</h2><p class="lead">By developing boat manufacturing, maintenance, and training capabilities, the company aims to contribute to a maritime value chain that creates jobs, strengthens local businesses, and improves access to essential services.</p></div>
+      <ul class="ticks two">
+        <li>Direct and indirect employment opportunities.</li>
+        <li>Technical skills development for young people.</li>
+        <li>Increased participation of local workers and businesses in maritime activities.</li>
+        <li>Improved access to dependable marine transportation.</li>
+        <li>Support for fishing, trade, logistics, and other water-dependent livelihoods.</li>
+        <li>Development of local manufacturing and maintenance capacity.</li>
+        <li>Greater opportunities for entrepreneurship and vocational advancement.</li>
+        <li>Stronger economic connections between riverine settlements and urban markets.</li>
+      </ul>
+      <div class="card" style="margin-top:36px;background:var(--paper)">
+        <h3>How we will measure it</h3>
+        <p>Over time, the company intends to assess its community programmes through practical indicators such as:</p>
+        <div class="grid4" style="margin-top:8px">
+          <span class="chip"><i></i>People trained</span>
+          <span class="chip"><i style="background:var(--green)"></i>Employment supported</span>
+          <span class="chip"><i style="background:var(--orange)"></i>Vessels built or maintained</span>
+          <span class="chip"><i style="background:var(--red)"></i>Communities reached</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNER ================= -->
+<section data-page="partner" aria-label="Partner with us" hidden>
+  <div class="phero">
+    <div class="wrap">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Partner with us</p>
+        <p class="eyebrow">Strategic partnerships and investment opportunities</p>
+        <h1 class="h1" style="font-size:clamp(34px,5vw,60px)">Partner in practical, sustainable maritime development</h1>
+        <p class="lead">To achieve its objectives, Continental Intertrade Ltd seeks to build strategic relationships with organisations and individuals that share its commitment to maritime development and inclusive economic growth.</p>
+        <div class="btns"><a class="btn btn-primary" href="#contact" data-link>Start a conversation <span class="arr">→</span></a></div>
+      </div>
+      <figure><img src="assets/img/stationery.jpg" alt="Continental Intertrade letterhead, envelope and business cards on a desk"></figure>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Potential areas of collaboration</p><h2 class="h2">Ten ways to work with us</h2></div>
+      <div class="grid3">
+        <div class="card"><h3>Manufacturing facilities</h3><p>Investment in boat manufacturing and assembly facilities.</p></div>
+        <div class="card"><h3>Engineering workshops</h3><p>Development of marine engineering and maintenance workshops.</p></div>
+        <div class="card"><h3>Training centres</h3><p>Establishment of maritime vocational training centres.</p></div>
+        <div class="card"><h3>Youth programmes</h3><p>Youth apprenticeship and employment programmes.</p></div>
+        <div class="card"><h3>Public-private partnerships</h3><p>Public-private partnerships for water transportation solutions.</p></div>
+        <div class="card"><h3>Technology transfer</h3><p>Technology transfer and technical cooperation with established boatbuilders.</p></div>
+        <div class="card"><h3>Accredited training</h3><p>Partnerships with accredited maritime training institutions.</p></div>
+        <div class="card"><h3>Supply arrangements</h3><p>Supply arrangements for vessels, engines, components, and marine equipment.</p></div>
+        <div class="card"><h3>Impact finance</h3><p>Development finance and impact investment for community-oriented maritime projects.</p></div>
+      </div>
+      <div class="card" style="margin-top:18px;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--ink);border-color:var(--ink)"><div style="display:flex;flex-direction:column;gap:6px"><h3 style="color:var(--cream)">Regional distribution and service</h3><p style="color:var(--on-dark)">Regional distribution and service partnerships across Africa.</p></div><a class="btn btn-primary" href="#contact" data-link>Discuss a partnership <span class="arr">→</span></a></div>
+    </div>
+  </div>
+
+  <div class="band dark">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Our African expansion strategy</p><h2 class="h2">A strong foundation in Nigeria before other African markets</h2><p class="lead">Continental Intertrade Ltd has a long-term vision that extends beyond Nigeria. The company seeks to develop into a recognised African maritime enterprise capable of delivering practical marine solutions across countries with significant riverine, inland-waterway, and coastal transportation needs.</p></div>
+      <div class="phases">
+        <div class="phase now" style="--c:var(--leaf)"><small>Phase One</small><h3>Foundation in Nigeria</h3><p>Develop core manufacturing, maintenance, and training capabilities; establish relationships with local customers and institutional partners; and build a reputation for reliability, quality, and service.</p></div>
+        <div class="phase" style="--c:var(--orange)"><small>Phase Two</small><h3>National Expansion</h3><p>Extend services to other Nigerian states with significant inland-waterway and coastal transportation needs, while strengthening technical capacity, distribution, and after-sales support.</p></div>
+        <div class="phase" style="--c:var(--coral)"><small>Phase Three</small><h3>Regional Partnerships</h3><p>Explore partnerships and business opportunities in West African markets where local transportation, fishing, marine commerce, and industrial operations create demand for appropriate vessels and marine services.</p></div>
+        <div class="phase" style="--c:#6FA3F0"><small>Phase Four</small><h3>Pan-African Development</h3><p>Pursue strategic expansion into suitable markets across Africa through partnerships, technical collaborations, distribution arrangements, service centres, and locally responsive manufacturing solutions.</p></div>
+      </div>
+      <p class="lead" style="margin-top:40px">This phased approach is intended to support responsible growth, sustainable investment, and the development of a competitive African maritime brand.</p>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap split top">
+      <div class="stack">
+        <p class="eyebrow">Our target customers and partners</p>
+        <h2 class="h2">Who we serve</h2>
+        <p class="lead">The company will seek to develop tailored solutions for different customer groups, with an emphasis on reliability, affordability, long-term service support, and measurable value.</p>
+      </div>
+      <ul class="ticks">
+        <li>Federal, state, and local government institutions.</li>
+        <li>Maritime and inland-waterway transport operators.</li>
+        <li>Fishing businesses and fishing cooperatives.</li>
+        <li>Oil and gas support service companies.</li>
+        <li>Marine construction and industrial operators.</li>
+        <li>Tourism, hospitality, and coastal transport businesses.</li>
+        <li>Community associations and riverine development organisations.</li>
+        <li>Educational and vocational training institutions.</li>
+        <li>Investors, development finance institutions, and impact investors.</li>
+        <li>Non-governmental organisations and development partners.</li>
+        <li>Private individuals and commercial vessel owners.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section data-page="contact" aria-label="Contact" hidden>
+  <div class="phero">
+    <div class="wrap" style="grid-template-columns:1fr">
+      <div class="stack">
+        <p class="crumb"><a href="#home" data-link>Home</a> / Contact</p>
+        <p class="eyebrow">Contact us</p>
+        <h1 class="h1" style="font-size:clamp(36px,5.4vw,64px)">Talk to Continental Intertrade</h1>
+        <p class="lead">Vessels, maintenance, training or partnerships: reach our head office in Abuja or visit the boatyard in Yenagoa.</p>
+      </div>
+    </div>
+  </div>
+  <div class="stripe"></div>
+  <div class="band">
+    <div class="wrap split top">
+      <div class="stack">
+        <div class="direct">
+          <div><small>Phone</small><span class="val num" id="ph">0806 000 0399</span><button class="copy" type="button" data-copy="08060000399">Copy number</button></div>
+          <div><small>Website</small><span class="val" id="web">www.africancontinentalintertrade.org</span><button class="copy" type="button" data-copy="www.africancontinentalintertrade.org">Copy address</button></div>
+        </div>
+        <div class="locs">
+          <div class="loc"><span class="pin" style="background:var(--green)"><svg><use href="#i-pin"/></svg></span><div><small>Head office</small><p>3rd Floor, The Mall by Funab, First Avenue, Gwarimpa, Abuja</p></div></div>
+          <div class="loc"><span class="pin" style="background:var(--orange)"><svg><use href="#i-pin"/></svg></span><div><small>Abuja office</small><p>B66 Efab Mall, Area 11, Garki, Abuja</p></div></div>
+          <div class="loc"><span class="pin" style="background:var(--blue)"><svg><use href="#i-anchor"/></svg></span><div><small>Boatyard</small><p>Continental Boatyard, The Marine Base, Ovom, Yenagoa, Bayelsa State</p></div></div>
+        </div>
+      </div>
+      <form class="f" id="form" novalidate>
+        <div class="full"><h2 class="h3">Send us a message</h2><p class="note" style="margin-top:6px">We reply to every enquiry. Fields marked * are required.</p></div>
+        <label for="f-name">Full name *<input id="f-name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></label>
+        <label for="f-org">Organisation<input id="f-org" name="org" autocomplete="organization"></label>
+        <label for="f-email">Email *<input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" id="e-email"></span></label>
+        <label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="080..."></label>
+        <label class="full" for="f-topic">I'm interested in *
+          <select id="f-topic" name="topic" required>
+            <option value="">Choose one</option>
+            <option>A new vessel</option>
+            <option>Maintenance or repair</option>
+            <option>Maritime training</option>
+            <option>Partnership or investment</option>
+            <option>Community transport</option>
+            <option>Something else</option>
+          </select><span class="err" id="e-topic"></span></label>
+        <label class="full" for="f-msg">Message *<textarea id="f-msg" name="message" required placeholder="Tell us what you need, where it will operate and your timeline."></textarea><span class="err" id="e-msg"></span></label>
+        <div class="full btns" style="align-items:center"><button class="btn btn-primary" type="submit">Send message <span class="arr">→</span></button><span class="note">Or call 0806 000 0399</span></div>
+        <div class="done" id="done" hidden role="status"><b>Message ready to send</b><span id="done-txt"></span><span class="note">This website preview isn't connected to an inbox yet. Once the site goes live, this form will deliver to the Continental Intertrade team.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="band dark tight belief-band">
+  <div class="wrap stack" style="gap:16px">
+    <p class="eyebrow">Our guiding belief is simple</p>
+    <p class="belief"><span class="g">Better Boats.</span> <span class="o">Better Skills.</span> <span class="r">Better Connections.</span> Better Lives.</p>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="stripe"></div>
+  <div class="wrap foot">
+    <div class="stack" style="gap:18px">
+      <a class="brand" href="#home" data-link aria-label="Continental Intertrade Ltd, home">
+        <svg aria-hidden="true" style="width:46px;height:41px"><use href="#mark-rev"/></svg>
+        <span class="wm"><b>CONTINENTAL</b><span class="bars"><i style="background:var(--leaf)"></i><i style="background:var(--orange)"></i><i style="background:var(--coral)"></i></span><small>INTERTRADE <em style="color:var(--orange)">LTD</em></small></span>
+      </a>
+      <p style="font-size:15px;max-width:34ch">Continental Intertrade Ltd: building a stronger maritime future for Nigeria and Africa.</p>
+    </div>
+    <div><h4>Company</h4><ul><li><a href="#about" data-link>About us</a></li><li><a href="#communities" data-link>Communities</a></li><li><a href="#partner" data-link>Partner with us</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
+    <div><h4>What we do</h4><ul><li><a href="#boats" data-link>Boat manufacturing</a></li><li><a href="#maintenance" data-link>Maintenance and engineering</a></li><li><a href="#training" data-link>Maritime training</a></li><li><a href="#communities" data-link>Community solutions</a></li></ul></div>
+    <div>
+      <h4>Find us</h4>
+      <div class="addr">
+        <p><b>Head office</b>3rd Floor, The Mall by Funab, First Avenue, Gwarimpa, Abuja</p>
+        <p><b>Abuja office</b>B66 Efab Mall, Area 11, Garki, Abuja</p>
+        <p><b>Boatyard</b>Continental Boatyard, The Marine Base, Ovom, Yenagoa, Bayelsa State</p>
+        <p><b>Phone</b><span class="num">0806 000 0399</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap legal"><span>© 2026 Continental Intertrade Ltd. Incorporated in the Federal Republic of Nigeria.</span><span>www.africancontinentalintertrade.org</span></div>
+</footer>
+
+<script>
+(function(){
+  var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
+  var ids = pages.map(function(p){return p.getAttribute('data-page');});
+  var titles = {home:'Continental Intertrade',about:'About',boats:'Boat Manufacturing',maintenance:'Maintenance',training:'Training',communities:'Communities',partner:'Partner with us',contact:'Contact'};
+  var menu = document.getElementById('menu'), burger = document.getElementById('burger');
+  var belief = document.querySelector('.belief-band');
+
+  function show(id, focus){
+    if(ids.indexOf(id) < 0) id = 'home';
+    pages.forEach(function(p){ p.hidden = p.getAttribute('data-page') !== id; });
+    document.querySelectorAll('.menu a[data-link]').forEach(function(a){
+      if(a.getAttribute('href') === '#'+id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    belief.hidden = (id === 'contact');
+    document.title = id === 'home' ? 'Continental Intertrade' : titles[id] + ' · Continental Intertrade';
+    window.scrollTo(0,0);
+    if(focus){ var h = document.querySelector('[data-page="'+id+'"] h1'); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
+  }
+  function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Open menu'); }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-link]');
+    if(!a) return;
+    e.preventDefault();
+    var id = a.getAttribute('href').slice(1);
+    show(id, true); closeMenu();
+    try{ history.replaceState(null,'','#'+id); }catch(err){}
+  });
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+    burger.setAttribute('aria-label', open ? 'Close menu':'Open menu');
+  });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
+  show((location.hash || '#home').slice(1));
+
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = b.getAttribute('data-copy'), label = b.textContent;
+      function ok(){ b.textContent = 'Copied'; setTimeout(function(){ b.textContent = label; }, 1600); }
+      function fallback(){ var s = b.previousElementSibling, r = document.createRange(); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); b.textContent = 'Selected, press copy'; setTimeout(function(){ b.textContent = label; }, 2200); }
+      try{ navigator.clipboard.writeText(t).then(ok, fallback); }catch(err){ fallback(); }
+    });
+  });
+
+  // Contact form
+  var form = document.getElementById('form');
+  function setErr(id, field, msg){ document.getElementById(id).textContent = msg; field.setAttribute('aria-invalid', msg ? 'true':'false'); return !msg; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var el = form.elements, n = el.namedItem('name'), em = el.namedItem('email'), tp = el.namedItem('topic'), m = el.namedItem('message'), good = true;
+    good = setErr('e-name', n, n.value.trim() ? '' : 'Enter your name so we know who to reply to.') && good;
+    good = setErr('e-email', em, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim()) ? '' : 'Enter an email address like name@company.com.') && good;
+    good = setErr('e-topic', tp, tp.value ? '' : 'Choose what your enquiry is about.') && good;
+    good = setErr('e-msg', m, m.value.trim().length >= 10 ? '' : 'Add a few words about what you need.') && good;
+    if(!good){ var bad = form.querySelector('[aria-invalid="true"]'); if(bad) bad.focus(); return; }
+    document.getElementById('done-txt').textContent = 'Thank you, ' + n.value.trim().split(' ')[0] + '. Your enquiry about "' + tp.value.toLowerCase() + '" is complete.';
+    document.getElementById('done').hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
